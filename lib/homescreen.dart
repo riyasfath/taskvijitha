@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         DateTime? selectedDate;
 
         return AlertDialog(
-          backgroundColor: Colors.orange, // Orange background for the dialog
+          backgroundColor: Colors.lightBlue, // Orange background for the dialog
           title: const Text('Create Task', style: TextStyle(color: Colors.white)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -67,8 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: [
                     const Icon(Icons.calendar_today, color: Colors.white), // Picker icon
-                    const SizedBox(width: 8),
-                    Text('Select Date: ${selectedDate != null ? DateFormat.yMMMd().format(selectedDate!) : 'Not selected'}',
+                    const SizedBox(width: 12),
+                    Text('Select Date ${selectedDate != null ? DateFormat.yMMMd().format(selectedDate!) : ''}',
                         style: const TextStyle(color: Colors.white)),
                   ],
                 ),
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
         DateTime? selectedDate = task.date;
 
         return AlertDialog(
-          backgroundColor: Colors.orange, // Orange background for the dialog
+          backgroundColor: Colors.lightBlue, // Orange background for the dialog
           title: const Text('Edit Task', style: TextStyle(color: Colors.white)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange, // Orange background for AppBar
+        backgroundColor: Colors.lightBlue, // Orange background for AppBar
         title: const Center(
           child: Text(
             'TASKS',
@@ -211,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ElevatedButton(
               onPressed: _addTask,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange, // Orange background
+                backgroundColor: Colors.lightBlue, // Orange background
                 padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30), // Rounded button
@@ -233,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 return GestureDetector(
                   onTap: () => _editTask(tasks[index]),  // Edit task on grid item tap
                   child: Card(
-                    color: Colors.orange,  // Change to a vivid orange color
+                    color: Colors.lightBlue,  // Change to a vivid orange color
                     elevation: 5,
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -242,12 +242,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Text(
                             tasks[index].title,
-                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.white),
                           ),
                           const SizedBox(height: 8),
                           Text(
                             DateFormat.yMMMd().format(tasks[index].date),  // Format the date here
-                            style: const TextStyle(color: Colors.black), // Black text for due date
+                            style: const TextStyle(color: Colors.white), // Black text for due date
                           ),
                           const SizedBox(height: 8),
                           IconButton(
